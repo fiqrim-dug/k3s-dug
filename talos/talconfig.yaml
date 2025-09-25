@@ -20,7 +20,7 @@ cniConfig:
 
 nodes:
   - hostname: "k3s-1"
-    ipAddress: "172.18.255.81"
+    ipAddress: "172.18.0.201"
     installDisk: "/dev/sdb"
     machineSpec:
       secureboot: false
@@ -31,10 +31,10 @@ nodes:
           hardwareAddr: "90:e2:ba:78:39:e8"
         dhcp: false
         addresses:
-          - "172.18.255.81/16"
+          - "172.18.0.201/24"
         routes:
           - network: "0.0.0.0/0"
-            gateway: "172.18.0.1"
+            gateway: "172.18.0.254"
         mtu: 1500
         vip:
           ip: "172.18.0.200"
@@ -50,10 +50,10 @@ nodes:
           hardwareAddr: "0c:c4:7a:1e:ac:4c"
         dhcp: false
         addresses:
-          - "172.18.0.15/16"
+          - "172.18.0.15/24"
         routes:
           - network: "0.0.0.0/0"
-            gateway: "172.18.0.1"
+            gateway: "172.18.0.254"
         mtu: 1500
 
 # Global patches
